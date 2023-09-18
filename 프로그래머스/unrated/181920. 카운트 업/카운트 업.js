@@ -1,7 +1,3 @@
-function solution(start_num, end_num) {
-    let result=[];
-    for(let i=start_num; i<end_num+1; i++){
-        result.push(i);
-    }
-    return result;
+function solution(start, end) {
+    return Array(end-start+1).fill(start).map((el,idx)=>el+idx);
 }
