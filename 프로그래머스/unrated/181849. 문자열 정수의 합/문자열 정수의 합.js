@@ -1,3 +1,3 @@
 function solution(num_str) {
-    return num_str.split('').map(el=>el*1).reduce((a,c)=>a+c);
+    return [...num_str].reduce((a,c)=>a*1+ c*1);
 }
