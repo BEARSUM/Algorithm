@@ -1,7 +1,9 @@
 function solution(todo_list, finished) {
-    let answer=[];
-    for(let i=0; i<finished.length; i++){
-        if(!finished[i]) answer.push(todo_list[i])
-    }
-    return answer;
+    // let answer=[];
+    // for(let i=0; i<finished.length; i++){
+    //     if(!finished[i]) answer.push(todo_list[i])
+    // }
+    
+    return todo_list.filter((v,idx)=>!finished[idx])
+    
 }
