@@ -1,3 +1,3 @@
 function solution(myString) {
-    return [...myString].map((el)=>el.charCodeAt()<'l'.charCodeAt()?'l':el).join('');
+    return [...myString].map((el)=>el<'l'?'l':el).join('');
 }
