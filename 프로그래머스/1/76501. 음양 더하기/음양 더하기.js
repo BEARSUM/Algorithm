@@ -1,4 +1,4 @@
 function solution(absolutes, signs) {
-    return absolutes.map((el,i)=>signs[i]?el:-el).reduce((a,c)=>a+c);
+    return absolutes.reduce((a,c,i)=>signs[i]?a+c:a-c,0);
     
 }
