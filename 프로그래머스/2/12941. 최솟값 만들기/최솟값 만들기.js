@@ -1,7 +1,7 @@
 function solution(A,B){
-    const ascendingA = A.sort((a,b)=>a-b);
-    const descendingB = B.sort((a,b)=>b-a);
+    A.sort((a,b)=>a-b);
+    B.sort((a,b)=>b-a);
     
-    return ascendingA.reduce((acc,cur,i)=>acc+cur*descendingB[i],0);
+    return A.reduce((acc,cur,i)=>acc+cur*B[i],0);
 
 }
