@@ -1,19 +1,20 @@
+//다시 풀기
 function solution(lines) {
-     const stack = []
-    const linesObj = {}
-    lines.forEach(([start,end])=>{
-        for(let i=start;i<end;i++){
-            if(linesObj[i+0.5] === undefined){
-                linesObj[i+0.5] = true
-            }
-            else{
-                if(!stack.includes(i+0.5)){
-                    stack.push(i+0.5)
-                }
-            }
+    //1. 주어진 선분을 1단위로 arr에 넣는다.
+    const arr=[];
+    lines.forEach(([x1,x2])=>{
+        for(let i=x1;i<x2; i++){
+            arr.push(`${i}${i+1}`);
         }
     })
-    const answer = stack.length
-    return answer
-
+    //2. 겹치는 선분을 카운트한다.
+    const cnt = new Map();
+    [...arr].forEach((line)=>{
+        cnt.set(line,(cnt.get(line)||0)+1);
+    })
+    //3. 카운트가 1을 초과하는 경우를 세서 set에 추가 (중복 제거).
+    const set = new Set();
+    arr.filter(line=>cnt.get(line)>1).forEach(line=>set.add(line));
+    
+    return set.size;
 }
