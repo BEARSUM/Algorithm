@@ -1,4 +1,7 @@
 function solution(n) {
-    return Array(n).fill(1).map((el,i)=>i+1).filter(v=>v%2);
-
+    const result =[];
+    for(let i=1; i<=n; i+=2){
+        result.push(i);
+    }
+    return result;
 }
