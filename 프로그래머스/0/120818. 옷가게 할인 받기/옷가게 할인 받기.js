@@ -1,4 +1,5 @@
 function solution(price) {
+    
     if(price >= 500000){
         return Math.floor(price * 0.8);
     }
