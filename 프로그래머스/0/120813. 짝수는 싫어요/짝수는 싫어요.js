@@ -1,7 +1,4 @@
 function solution(n) {
-    const result =[];
-    for(let i=1; i<=n; i+=2){
-        result.push(i);
-    }
-    return result;
+    const length=n%2?Math.floor(n/2)+1:n/2;
+    return Array.from({length:length}).fill(1).map((num,i)=>2*i+1);
 }
