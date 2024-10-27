@@ -1,10 +1,6 @@
 function solution(numbers) {
-    const totalSum = 9*10/2
-    const sum = numbers.reduce((a,c)=>a+c);
-    return totalSum-sum;
+    const totalSum = Array.from({length:10},(v,i)=>i)
+                          .reduce((acc,cur)=>acc+cur);
+    const numbersSum = numbers.reduce((acc,cur)=>acc+cur);
+    return totalSum - numbersSum;
 }
-    
-
-    
-    
-    
