@@ -1,7 +1,6 @@
 function solution(arr) {
-    
     const min = Math.min(...arr);
-    if(arr.length===1) return [-1];
-    else return [...arr].filter(v=>v!==min);
+    const filteredArray = [...arr].filter(x=>x!==min);
     
-    }
+    return filteredArray.length<=1 ? [-1] : filteredArray;   
+}
